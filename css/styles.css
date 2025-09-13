@@ -3291,9 +3291,11 @@ td:last-child {
 }
 
 .header-logo img {
-    width         : var(--logo-width);
+    width: 7rem;
     margin        : 0;
     vertical-align: bottom;
+    height: auto;
+
 }
 
 /* --------------------------------------------------------------------
@@ -4987,3 +4989,31 @@ td:last-child {
         line-height: var(--vspace-0_75);
     }
 }
+
+
+/* ======================
+   Custom: Productos gallery (pestaña 3 → punto 2)
+   - Siempre 2 columnas
+   - Imágenes más pequeñas manteniendo proporciones
+   ====================== */
+#productos .gallery-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding-bottom: 5%;
+}
+
+#productos .gallery-items__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#productos .gallery-items__item img {
+    width: 100%;        /* reduce tamaño relativo a su columna */
+    height: auto;      /* mantiene proporciones */
+    max-width: 260px;  /* límite adicional para que no crezcan demasiado en escritorio */
+    display: block;
+}
+
